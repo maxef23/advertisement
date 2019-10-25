@@ -9,6 +9,7 @@ class User(db.Model):
     login = db.Column(db.String(120), nullable=False, comment='Логин', unique=True)
     password = db.Column(db.String(120), nullable=False, comment='Пароль')
     name = db.Column(db.String(120), comment='Имя пользователя')
+    mail = db.Column(db.String(120), comment='Email пользователя')
 
     def generate_auth_token(self, expiration=80000):
         s = Serializer(app.config['SECRET_KEY'], expires_in=expiration)

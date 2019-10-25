@@ -20,7 +20,6 @@ daoPool.init_app(app)
 db = daoPool.sqlDAO
 migrate = Migrate(app, db)
 
-
 from app import api
 
 

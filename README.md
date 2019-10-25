@@ -22,6 +22,21 @@ xhttp.send("login=admin&password=admin");
 ```
 
 
+### Регистрация:
+
+- /register. В запрос входит параметр email. Если пользователя с таким email не существует, то создается новый пользователь и на данный email отсылается письмо с логином и сгенерированным паролем. Если email существует возврашается ошибка 406
+
+##### Пример:
+```
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "/register", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send('email=myemail@gmail.com');
+```
+
+
+
+
 #### Подключение к бд:
 
 Логин: dbuser. Пароль: dbpassword. Таблица: advertisement.
